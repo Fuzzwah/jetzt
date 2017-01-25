@@ -67,15 +67,15 @@
     // if we change config structure in future versions, having this means
     // we can update users' persisted configs to match.
     config_version: CONFIG_VERSION,
-    target_wpm: 400,
+    target_wpm: 700,
     scale: 1,
-    dark: false,
+    dark: true,
     selected_theme: 0,
     show_message: false,
     strip_citation: false,
     selection_color: "#FF0000",
     modifiers: DEFAULT_MODIFIERS,
-    font_family: "Menlo, Monaco, Consolas, monospace",
+    font_family: "Bitstream Vera Sans Mono, Menlo, Monaco, Consolas, monospace",
     font_weight: "normal",
     custom_themes: []
   };
@@ -134,7 +134,7 @@
 
   /*** BACKEND ***/
 
-  // the backend is a swappable object with two methods, get and set. 
+  // the backend is a swappable object with two methods, get and set.
   // get takes a cb and should invoke the callback, supplying the persisted
   // JSON if available, or some falsey value if not. Set takes some json and
   // presumably puts it somewhere. Or not. whatevs.
@@ -201,7 +201,7 @@
    *
    * e.g.
    *      jetzt.config("cheese", "Edam")
-   * 
+   *
    * sets the "cheese" option to the string "Edam"
    *
    *      jetzt.config("cheese")
@@ -218,7 +218,7 @@
    *      => "Stilton"
    *
    *      jetzt.config("cheese")
-   * 
+   *
    *      => {color: "blue", name: "Stilton"}
    */
   var config = function (keyPath, val) {
